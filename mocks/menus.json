@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "path": "/system",
+      "name": "system",
+      "component": "Layout",
+      "meta": {
+          "title": "menu.system",
+          "icon": "icon-4"
+      },
+      "children": [
+          {
+              "path": "user",
+              "name": "user",
+              "component": "systemManagement/user",
+              "meta": {
+                  "title": "menu.user"
+              }
+          },
+          {
+              "path": "role",
+              "name": "role",
+              "component": "systemManagement/role",
+              "meta": {
+                  "title": "menu.role"
+              }
+          }
+      ]
+  },
+  {
+    "path": "/auth",
+    "name": "auth",
+    "component": "Layout",
+    "meta": {
+        "title": "menu.auth",
+        "icon": "icon-5"
+    },
+    "children": [
+        {
+            "path": "menu",
+            "name": "menu",
+            "component": "authManagement/auth",
+            "meta": {
+                "title": "menu.auth"
+            }
+        }
+    ]
+}
+],
+  "code": 200,
+  "message": "ok"
+}
