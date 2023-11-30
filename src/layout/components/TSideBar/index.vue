@@ -10,8 +10,6 @@
     :collapse-transition="false"
     :unique-opened="true"
   >
-    <i class="logo" v-if="!collapse">Demo</i>
-    <i class="min-logo" v-else>Demo</i>
     <template v-for="item in routes">
       <el-menu-item
         v-if="item.hasOneShowingChild && !item.hidden"
@@ -25,7 +23,7 @@
           :name="item.meta.icon"
         ></svg-icon>
         <template #title>
-          <span v-if="item.meta">{{ $t(item.meta.title) }}</span>
+          <span v-if="item.meta">{{ item.meta.title }}</span>
         </template>
       </el-menu-item>
       <el-sub-menu
@@ -36,7 +34,7 @@
         "
         :key="item.path"
         :index="item.path"
-        popper-append-to-body
+        teleported
       >
         <template #title>
           <svg-icon
@@ -44,7 +42,7 @@
             v-if="item.meta && item.meta.icon"
             :name="item.meta.icon"
           ></svg-icon>
-          <span v-if="item.meta">{{ $t(item.meta.title) }}</span>
+          <span v-if="item.meta">{{ item.meta.title }}</span>
         </template>
         <template v-for="child in item.children">
           <el-menu-item
@@ -58,7 +56,7 @@
               :name="child.meta.icon"
             ></svg-icon>
             <template #title>
-              <span v-if="child.meta"> {{ $t(child.meta.title) }}</span>
+              <span v-if="child.meta"> {{ child.meta.title }}</span>
             </template>
           </el-menu-item>
         </template>

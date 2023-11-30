@@ -1,4 +1,6 @@
 import { defineStore } from "pinia";
+import { removeToken } from "@/utils/cookies";
+
 
 const useUser = defineStore({
   id: "user-pinia",
@@ -16,6 +18,9 @@ const useUser = defineStore({
     setUserInfo(info) {
       this.userInfo = info;
     },
+    logout() {
+      removeToken();
+    }
   },
 });
 

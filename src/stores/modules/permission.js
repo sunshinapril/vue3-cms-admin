@@ -1,6 +1,6 @@
 import { constantRouterMap } from "@/router/index";
 import { defineComponent } from "vue";
-const Layout = () => import("@/views/Layout.vue");
+const Layout = () => import("@/layout/index.vue");
 import { defineStore } from "pinia";
 
 const Outlet = defineComponent({
@@ -14,13 +14,20 @@ const usePermission = defineStore({
   state: () => ({
     routers: constantRouterMap,
     addRouters: [],
+    sidebarRouters: [],
   }),
+  getters: {
+    getRouters: (state) => state.routers,
+  },
   actions: {
     setRouters(routers) {
       this.addRouters = routers;
-      this.routers = constantRouterMap.concat(routers);
+      this.routers = [...constantRouterMap, ...routers];
       return Promise.resolve(routers);
     },
+    setSidebarRouters(routers) {
+      this.sidebarRouters = routers;
+    }
   },
 });
 const modulesRoutes = import.meta.glob("/src/views/**/*.{vue,jsx}");

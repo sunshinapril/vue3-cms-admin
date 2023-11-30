@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { setPageTitle } from "@/utils";
 import { getToken } from "@/utils/cookies";
-import i18n from "@/lang";
 import useUser from "@/stores/modules/user";
 import usePermission, { filterAsyncRouter } from "@/stores/modules/permission";
 import { getUserInfo, buildMenus } from "@/apis/user";
@@ -37,7 +36,7 @@ const router = createRouter({
 const whiteList = ["/login"]; // no redirect whitelist
 router.beforeEach(async (to, from, next) => {
   if (to.meta.title) {
-    setPageTitle(i18n.global.t(to.meta.title));
+    setPageTitle(to.meta.title);
   }
   if (getToken()) {
     if (!useUser().getUserInfo) {

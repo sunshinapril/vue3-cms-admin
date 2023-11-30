@@ -4,7 +4,6 @@ import App from "./App.vue";
 import router from "./router";
 import "./assets/styles/global.less";
 import "./assets/styles/reset.less";
-import i18n from "@/lang";
 import { setupStore } from "@/stores";
 import { setupComponents } from "@/components";
 
@@ -17,7 +16,6 @@ Object.keys(directives).forEach((key) => {
 });
 
 app.use(router);
-app.use(i18n);
 setupStore(app);
 setupComponents(app);
 
