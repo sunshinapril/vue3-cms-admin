@@ -5,9 +5,9 @@ import router from "@/router";
 import { getToken, removeToken } from "./cookies";
 function request(config) {
   const _config = {
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BASE_URL + '/api',
     headers: {
-      Authorization: getToken(),
+      Authorization: 'Bearer ' + getToken(),
       "Content-Type": "application/json",
     },
     ...config,
