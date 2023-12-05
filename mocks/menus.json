@@ -3,6 +3,301 @@
     "code": 200,
     "data": [
         {
+            "name": "Dashboard",
+            "path": "/dashboard",
+            "hidden": false,
+            "redirect": "noRedirect",
+            "component": "Layout",
+            "alwaysShow": true,
+            "meta": {
+                "title": "工作台",
+                "icon": "icon_9",
+                "corpId": null
+            },
+            "children": [
+                {
+                    "name": "Dashboard/index",
+                    "path": "dashboard/index",
+                    "hidden": false,
+                    "component": "dashboard/index",
+                    "meta": {
+                        "title": "工作台首页",
+                        "icon": "#",
+                        "corpId": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Customer",
+            "path": "/customer",
+            "hidden": false,
+            "redirect": "noRedirect",
+            "component": "Layout",
+            "alwaysShow": true,
+            "meta": {
+                "title": "客户管理",
+                "icon": "icon_11",
+                "corpId": null
+            },
+            "children": [
+                {
+                    "name": "CustToucMan/MyCustDistribute",
+                    "path": "custToucMan/MyCustDistribute",
+                    "hidden": false,
+                    "redirect": "noRedirect",
+                    "component": "Layout",
+                    "alwaysShow": true,
+                    "meta": {
+                        "title": "客户列表",
+                        "icon": "#",
+                        "corpId": null
+                    },
+                    "children": [
+                        {
+                            "name": "CustToucMan/MyCust",
+                            "path": "custToucMan/MyCust",
+                            "hidden": false,
+                            "component": "custToucMan/MyCust",
+                            "meta": {
+                                "title": "全部客户",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustToucMan/MyCustDistribute",
+                            "path": "custToucMan/MyCustDistribute",
+                            "hidden": false,
+                            "component": "custToucMan/MyCustDistribute",
+                            "meta": {
+                                "title": "待分配",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustToucMan/MyCustFollow",
+                            "path": "custToucMan/MyCustFollow",
+                            "hidden": false,
+                            "component": "custToucMan/MyCustFollow",
+                            "meta": {
+                                "title": "跟进中",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustToucMan/MyCustPublic",
+                            "path": "custToucMan/MyCustPublic",
+                            "hidden": false,
+                            "component": "custToucMan/MyCustPublic",
+                            "meta": {
+                                "title": "营业部公海",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustomerDistribute/AllCusPoolPublic",
+                            "path": "customerDistribute/AllCusPoolPublic",
+                            "hidden": false,
+                            "component": "customerDistribute/allCusPool/AllCusPoolPublic",
+                            "meta": {
+                                "title": "总部公海",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "Customer",
+                            "path": "customer",
+                            "hidden": false,
+                            "component": "customerManage/customer",
+                            "meta": {
+                                "title": "微信客户",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustomerManage/cstOpenedAcct",
+                            "path": "customerManage/cstOpenedAcct",
+                            "hidden": false,
+                            "component": "customerManage/cstOpenedAcct",
+                            "meta": {
+                                "title": "开户客户",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustomerDistribute/allCusPool/AllCusPool",
+                            "path": "customerDistribute/allCusPool/AllCusPool",
+                            "hidden": true,
+                            "component": "customerDistribute/allCusPool/AllCusPool",
+                            "meta": {
+                                "title": "全量手机客户池",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustToucMan/MyCustomer",
+                            "path": "custToucMan/MyCustomer",
+                            "hidden": false,
+                            "component": "custToucMan/MyCustomer",
+                            "meta": {
+                                "title": "我的客户",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CustomerDistribute/CusRules",
+                    "path": "customerDistribute/CusRules",
+                    "hidden": false,
+                    "redirect": "noRedirect",
+                    "component": "Layout",
+                    "alwaysShow": true,
+                    "meta": {
+                        "title": "跟进设置",
+                        "icon": "#",
+                        "corpId": null
+                    },
+                    "children": [
+                        {
+                            "name": "CustomerDistribute/CusRules",
+                            "path": "customerDistribute/CusRules",
+                            "hidden": true,
+                            "component": "customerDistribute/CusRules",
+                            "meta": {
+                                "title": "企业标签设置",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustToucMan/CstTagManageAll",
+                            "path": "custToucMan/CstTagManageAll",
+                            "hidden": false,
+                            "component": "custToucMan/CstTagManageAll",
+                            "meta": {
+                                "title": "客户标签管理",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CustToucMan/CstTagManageDept",
+                            "path": "custToucMan/CstTagManageDept",
+                            "hidden": false,
+                            "component": "custToucMan/CstTagManageDept",
+                            "meta": {
+                                "title": "客户标签筛选",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "/customer/noticeManage",
+                            "path": "/customer/noticeManage",
+                            "hidden": false,
+                            "component": "messageCenter/ConfigMessageNotice",
+                            "meta": {
+                                "title": "消息提醒管理",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "CstFieldSetting",
+                            "path": "cstFieldSetting",
+                            "hidden": false,
+                            "component": "customerManage/cstFieldSetting",
+                            "meta": {
+                                "title": "客户字段设置",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CustomerDetail",
+                    "path": "customerDetail",
+                    "hidden": true,
+                    "component": "customerManage/customerDetail",
+                    "meta": {
+                        "title": "客户详情",
+                        "icon": "#",
+                        "corpId": null
+                    }
+                },
+                {
+                    "name": "/cstMerge",
+                    "path": "/cstMerge",
+                    "hidden": true,
+                    "component": "custMerge/CstMerge",
+                    "meta": {
+                        "title": "客户合并",
+                        "icon": "#",
+                        "corpId": null
+                    }
+                },
+                {
+                    "name": "/cstMergeHistory",
+                    "path": "/cstMergeHistory",
+                    "hidden": false,
+                    "component": "custMerge/CstMergeHistory",
+                    "meta": {
+                        "title": "客户合并历史",
+                        "icon": "#",
+                        "corpId": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "AdvertPush",
+            "path": "/advertPush",
+            "hidden": true,
+            "redirect": "noRedirect",
+            "component": "Layout",
+            "alwaysShow": true,
+            "meta": {
+                "title": "广告投放",
+                "icon": "#",
+                "corpId": null
+            },
+            "children": [
+                {
+                    "name": "AdvertPush/infoFlow",
+                    "path": "advertPush/infoFlow",
+                    "hidden": false,
+                    "component": "advertPush/infoFlow",
+                    "meta": {
+                        "title": "信息流",
+                        "icon": "#",
+                        "corpId": null
+                    }
+                },
+                {
+                    "name": "AdvertPush/SEM",
+                    "path": "advertPush/SEM",
+                    "hidden": false,
+                    "component": "advertPush/SEM",
+                    "meta": {
+                        "title": "SEM",
+                        "icon": "#",
+                        "corpId": null
+                    }
+                }
+            ]
+        },
+        {
             "name": "ChannelManage",
             "path": "/channelManage",
             "hidden": false,
@@ -154,316 +449,10 @@
                 {
                     "name": "CustToucMan/testPage",
                     "path": "custToucMan/testPage",
-                    "hidden": false,
+                    "hidden": true,
                     "component": "custToucMan/testPage",
                     "meta": {
                         "title": "全流程测试",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Customer",
-            "path": "/customer",
-            "hidden": false,
-            "redirect": "noRedirect",
-            "component": "Layout",
-            "alwaysShow": true,
-            "meta": {
-                "title": "客户管理",
-                "icon": "icon_11",
-                "corpId": null
-            },
-            "children": [
-                {
-                    "name": "CustToucMan/MyCustDistribute",
-                    "path": "custToucMan/MyCustDistribute",
-                    "hidden": false,
-                    "redirect": "noRedirect",
-                    "component": "Layout",
-                    "alwaysShow": true,
-                    "meta": {
-                        "title": "客户列表",
-                        "icon": "icon_1",
-                        "corpId": null
-                    },
-                    "children": [
-                        {
-                            "name": "CustToucMan/MyCust",
-                            "path": "custToucMan/MyCust",
-                            "hidden": false,
-                            "component": "custToucMan/MyCust",
-                            "meta": {
-                                "title": "全部客户",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustToucMan/MyCustDistribute",
-                            "path": "custToucMan/MyCustDistribute",
-                            "hidden": false,
-                            "component": "custToucMan/MyCustDistribute",
-                            "meta": {
-                                "title": "待分配",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustToucMan/MyCustFollow",
-                            "path": "custToucMan/MyCustFollow",
-                            "hidden": false,
-                            "component": "custToucMan/MyCustFollow",
-                            "meta": {
-                                "title": "跟进中",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustToucMan/MyCustPublic",
-                            "path": "custToucMan/MyCustPublic",
-                            "hidden": false,
-                            "component": "custToucMan/MyCustPublic",
-                            "meta": {
-                                "title": "营业部公海",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustomerDistribute/AllCusPoolPublic",
-                            "path": "customerDistribute/AllCusPoolPublic",
-                            "hidden": false,
-                            "component": "customerDistribute/allCusPool/AllCusPoolPublic",
-                            "meta": {
-                                "title": "总部公海",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "Customer",
-                            "path": "customer",
-                            "hidden": false,
-                            "component": "customerManage/customer",
-                            "meta": {
-                                "title": "微信客户",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustomerManage/cstOpenedAcct",
-                            "path": "customerManage/cstOpenedAcct",
-                            "hidden": false,
-                            "component": "customerManage/cstOpenedAcct",
-                            "meta": {
-                                "title": "开户客户",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustomerDistribute/allCusPool/AllCusPool",
-                            "path": "customerDistribute/allCusPool/AllCusPool",
-                            "hidden": true,
-                            "component": "customerDistribute/allCusPool/AllCusPool",
-                            "meta": {
-                                "title": "全量手机客户池",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustToucMan/MyCustomer",
-                            "path": "custToucMan/MyCustomer",
-                            "hidden": false,
-                            "component": "custToucMan/MyCustomer",
-                            "meta": {
-                                "title": "我的客户",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "CustomerDistribute/CusRules",
-                    "path": "customerDistribute/CusRules",
-                    "hidden": false,
-                    "redirect": "noRedirect",
-                    "component": "Layout",
-                    "alwaysShow": true,
-                    "meta": {
-                        "title": "跟进设置",
-                        "icon": "icon_2",
-                        "corpId": null
-                    },
-                    "children": [
-                        {
-                            "name": "CustomerDistribute/CusRules",
-                            "path": "customerDistribute/CusRules",
-                            "hidden": false,
-                            "component": "customerDistribute/CusRules",
-                            "meta": {
-                                "title": "企业标签设置",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustToucMan/CstTagManageAll",
-                            "path": "custToucMan/CstTagManageAll",
-                            "hidden": false,
-                            "component": "custToucMan/CstTagManageAll",
-                            "meta": {
-                                "title": "客户标签管理",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustToucMan/CstTagManageDept",
-                            "path": "custToucMan/CstTagManageDept",
-                            "hidden": false,
-                            "component": "custToucMan/CstTagManageDept",
-                            "meta": {
-                                "title": "客户标签筛选",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "/customer/noticeManage",
-                            "path": "/customer/noticeManage",
-                            "hidden": false,
-                            "component": "messageCenter/ConfigMessageNotice",
-                            "meta": {
-                                "title": "消息提醒管理",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CstFieldSetting",
-                            "path": "cstFieldSetting",
-                            "hidden": false,
-                            "component": "customerManage/cstFieldSetting",
-                            "meta": {
-                                "title": "客户字段设置",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "CustomerDetail",
-                    "path": "customerDetail",
-                    "hidden": true,
-                    "component": "customerManage/customerDetail",
-                    "meta": {
-                        "title": "客户详情",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                },
-                {
-                    "name": "/cstMerge",
-                    "path": "/cstMerge",
-                    "hidden": true,
-                    "component": "custMerge/CstMerge",
-                    "meta": {
-                        "title": "客户合并",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                },
-                {
-                    "name": "/cstMergeHistory",
-                    "path": "/cstMergeHistory",
-                    "hidden": false,
-                    "component": "custMerge/CstMergeHistory",
-                    "meta": {
-                        "title": "客户合并历史",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Call",
-            "path": "/call",
-            "hidden": true,
-            "redirect": "noRedirect",
-            "component": "Layout",
-            "alwaysShow": true,
-            "meta": {
-                "title": "外呼管理",
-                "icon": "#",
-                "corpId": null
-            },
-            "children": [
-                {
-                    "name": "CustomerDistribute/CusTouchList",
-                    "path": "customerDistribute/CusTouchList",
-                    "hidden": false,
-                    "component": "customerDistribute/CusTouchList",
-                    "meta": {
-                        "title": "外呼记录",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                }
-            ]
-        },
-        {
-            "name": "ShortMessMan",
-            "path": "/shortMessMan",
-            "hidden": true,
-            "redirect": "noRedirect",
-            "component": "Layout",
-            "alwaysShow": true,
-            "meta": {
-                "title": "短信管理",
-                "icon": "#",
-                "corpId": null
-            },
-            "children": [
-                {
-                    "name": "ShortMessMan/shortMessTempMan",
-                    "path": "shortMessMan/shortMessTempMan",
-                    "hidden": false,
-                    "component": "shortMessMan/shortMessTempMan",
-                    "meta": {
-                        "title": "短信模板",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                },
-                {
-                    "name": "ShortMessMan/smsApproveTab",
-                    "path": "shortMessMan/smsApproveTab",
-                    "hidden": false,
-                    "component": "shortMessMan/smsApproveTab",
-                    "meta": {
-                        "title": "短信审批",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                },
-                {
-                    "name": "CustomerDistribute/cusMsgTouchList",
-                    "path": "customerDistribute/cusMsgTouchList",
-                    "hidden": false,
-                    "component": "customerDistribute/CusMsgTouchList",
-                    "meta": {
-                        "title": "短信发送记录",
                         "icon": "#",
                         "corpId": null
                     }
@@ -503,17 +492,6 @@
                             "component": "customerDistribute/CusTouchList",
                             "meta": {
                                 "title": "外呼记录",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "CustomerDistribute/audioSensitive",
-                            "path": "customerDistribute/audioSensitive",
-                            "hidden": false,
-                            "component": "customerDistribute/AudioSensitive",
-                            "meta": {
-                                "title": "录音质检",
                                 "icon": "#",
                                 "corpId": null
                             }
@@ -579,7 +557,7 @@
             "alwaysShow": true,
             "meta": {
                 "title": "营销管理",
-                "icon": "icon_3",
+                "icon": "icon_12",
                 "corpId": null
             },
             "children": [
@@ -592,47 +570,10 @@
                     "alwaysShow": true,
                     "meta": {
                         "title": "素材中心",
-                        "icon": "material",
+                        "icon": "#",
                         "corpId": null
                     },
                     "children": [
-                        {
-                            "name": "BasicMaterial",
-                            "path": "basicMaterial",
-                            "hidden": false,
-                            "redirect": "noRedirect",
-                            "component": "Layout",
-                            "alwaysShow": true,
-                            "meta": {
-                                "title": "基础素材",
-                                "icon": "#",
-                                "corpId": null
-                            },
-                            "children": [
-                                {
-                                    "name": "List",
-                                    "path": "list",
-                                    "hidden": true,
-                                    "component": "contentCenter/basicMaterial/index2",
-                                    "meta": {
-                                        "title": "列表",
-                                        "icon": "#",
-                                        "corpId": null
-                                    }
-                                },
-                                {
-                                    "name": "Detail",
-                                    "path": "detail",
-                                    "hidden": true,
-                                    "component": "contentCenter/basicMaterial/detail",
-                                    "meta": {
-                                        "title": "素材详情",
-                                        "icon": "#",
-                                        "corpId": null
-                                    }
-                                }
-                            ]
-                        },
                         {
                             "name": "TrackMaterial",
                             "path": "trackMaterial",
@@ -650,7 +591,7 @@
                                     "name": "List",
                                     "path": "list",
                                     "hidden": true,
-                                    "component": "contentCenter/trackMaterial/index2",
+                                    "component": "contentCenter/trackMaterial/index",
                                     "meta": {
                                         "title": "列表",
                                         "icon": "#",
@@ -685,7 +626,55 @@
                                     "hidden": true,
                                     "component": "contentCenter/trackMaterial/detail",
                                     "meta": {
-                                        "title": "素材详情",
+                                        "title": "详情|统计",
+                                        "icon": "#",
+                                        "corpId": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "BasicMaterial",
+                            "path": "basicMaterial",
+                            "hidden": false,
+                            "redirect": "noRedirect",
+                            "component": "Layout",
+                            "alwaysShow": true,
+                            "meta": {
+                                "title": "基础素材",
+                                "icon": "#",
+                                "corpId": null
+                            },
+                            "children": [
+                                {
+                                    "name": "List",
+                                    "path": "list",
+                                    "hidden": true,
+                                    "component": "contentCenter/basicMaterial/index",
+                                    "meta": {
+                                        "title": "列表",
+                                        "icon": "#",
+                                        "corpId": null
+                                    }
+                                },
+                                {
+                                    "name": "Detail",
+                                    "path": "detail",
+                                    "hidden": true,
+                                    "component": "contentCenter/basicMaterial/detail",
+                                    "meta": {
+                                        "title": "详情|统计",
+                                        "icon": "#",
+                                        "corpId": null
+                                    }
+                                },
+                                {
+                                    "name": "PosterAdd",
+                                    "path": "posterAdd",
+                                    "hidden": true,
+                                    "component": "contentCenter/trackMaterial/posterAdd",
+                                    "meta": {
+                                        "title": "新建海报",
                                         "icon": "#",
                                         "corpId": null
                                     }
@@ -751,14 +740,14 @@
                     "alwaysShow": true,
                     "meta": {
                         "title": "聊天工具",
-                        "icon": "wechat",
+                        "icon": "#",
                         "corpId": null
                     },
                     "children": [
                         {
                             "name": "ChatToolbar",
                             "path": "chatToolbar",
-                            "hidden": false,
+                            "hidden": true,
                             "component": "appTool/chatToolbar/list",
                             "meta": {
                                 "title": "聊天素材",
@@ -797,32 +786,6 @@
             ]
         },
         {
-            "name": "Dashboard",
-            "path": "/dashboard",
-            "hidden": false,
-            "redirect": "noRedirect",
-            "component": "Layout",
-            "alwaysShow": true,
-            "meta": {
-                "title": "工作台",
-                "icon": "icon_9",
-                "corpId": null
-            },
-            "children": [
-                {
-                    "name": "Dashboard/index",
-                    "path": "dashboard/index",
-                    "hidden": false,
-                    "component": "dashboard/index",
-                    "meta": {
-                        "title": "工作台首页",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                }
-            ]
-        },
-        {
             "name": "RiskControl",
             "path": "/riskControl",
             "hidden": false,
@@ -830,8 +793,8 @@
             "component": "Layout",
             "alwaysShow": true,
             "meta": {
-                "title": "企业微信",
-                "icon": "icon_8",
+                "title": "会话存档",
+                "icon": "icon_7",
                 "corpId": null
             },
             "children": [
@@ -849,17 +812,6 @@
                     },
                     "children": [
                         {
-                            "name": "Content18",
-                            "path": "content18",
-                            "hidden": false,
-                            "component": "conversation/content/index",
-                            "meta": {
-                                "title": "华闻江苏分公司",
-                                "icon": "message",
-                                "corpId": "ww395c5b2b0095e767"
-                            }
-                        },
-                        {
                             "name": "Content20",
                             "path": "content20",
                             "hidden": false,
@@ -868,17 +820,6 @@
                                 "title": "华闻e期",
                                 "icon": "message",
                                 "corpId": "ww272359c03539e933"
-                            }
-                        },
-                        {
-                            "name": "Content25",
-                            "path": "content25",
-                            "hidden": false,
-                            "component": "conversation/content/index",
-                            "meta": {
-                                "title": "浦分",
-                                "icon": "message",
-                                "corpId": "ww5168cbb900727117"
                             }
                         }
                     ]
@@ -905,18 +846,29 @@
             "alwaysShow": true,
             "meta": {
                 "title": "企业管理",
-                "icon": "icon_7",
+                "icon": "cascader",
                 "corpId": null
             },
             "children": [
                 {
-                    "name": "/multiEnterpriseWechat",
-                    "path": "/multiEnterpriseWechat",
+                    "name": "MultiEnterpriseWechat",
+                    "path": "multiEnterpriseWechat",
                     "hidden": false,
                     "component": "enterpriseWechat/tableList",
                     "meta": {
                         "title": "多企微列表",
                         "icon": "#",
+                        "corpId": null
+                    }
+                },
+                {
+                    "name": "EnterpriseWechat",
+                    "path": "enterpriseWechat",
+                    "hidden": true,
+                    "component": "enterpriseWechat/list",
+                    "meta": {
+                        "title": "企微配置",
+                        "icon": "wechat",
                         "corpId": null
                     }
                 },
@@ -934,23 +886,23 @@
                     },
                     "children": [
                         {
-                            "name": "System/dept/index",
-                            "path": "system/dept/index",
-                            "hidden": false,
-                            "component": "system/dept/index",
-                            "meta": {
-                                "title": "机构管理",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
                             "name": "System/user/index",
                             "path": "system/user/index",
                             "hidden": false,
                             "component": "system/user/index",
                             "meta": {
                                 "title": "用户管理",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "System/dept/index",
+                            "path": "system/dept/index",
+                            "hidden": false,
+                            "component": "system/dept/index",
+                            "meta": {
+                                "title": "机构管理",
                                 "icon": "#",
                                 "corpId": null
                             }
@@ -1031,30 +983,8 @@
                                 "icon": "#",
                                 "corpId": null
                             }
-                        },
-                        {
-                            "name": "NumberPool/numberPoolList",
-                            "path": "numberPool/numberPoolList",
-                            "hidden": false,
-                            "component": "numberPool/numberPoolList",
-                            "meta": {
-                                "title": "号码池管理",
-                                "icon": "#",
-                                "corpId": null
-                            }
                         }
                     ]
-                },
-                {
-                    "name": "EnterpriseWechat",
-                    "path": "enterpriseWechat",
-                    "hidden": false,
-                    "component": "enterpriseWechat/list",
-                    "meta": {
-                        "title": "企微配置",
-                        "icon": "wechat",
-                        "corpId": null
-                    }
                 },
                 {
                     "name": "InternalCollaborate",
@@ -1098,11 +1028,70 @@
             },
             "children": [
                 {
+                    "name": "Live",
+                    "path": "live",
+                    "hidden": false,
+                    "redirect": "noRedirect",
+                    "component": "Layout",
+                    "alwaysShow": true,
+                    "meta": {
+                        "title": "直播数据",
+                        "icon": "#",
+                        "corpId": null
+                    },
+                    "children": [
+                        {
+                            "name": "LiveStatistics/index",
+                            "path": "liveStatistics/index",
+                            "hidden": false,
+                            "component": "dataStatistics/live/liveStatistics/index",
+                            "meta": {
+                                "title": "用户直播统计",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "SpeechDetails/index",
+                            "path": "speechDetails/index",
+                            "hidden": false,
+                            "component": "dataStatistics/live/speechDetails/index",
+                            "meta": {
+                                "title": "用户发言明细",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "LiveView/index",
+                            "path": "LiveView/index",
+                            "hidden": false,
+                            "component": "dataStatistics/live/liveView/index",
+                            "meta": {
+                                "title": "观看数据汇总",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        },
+                        {
+                            "name": "LiveView/staff",
+                            "path": "LiveView/staff",
+                            "hidden": false,
+                            "component": "dataStatistics/live/liveView/staff",
+                            "meta": {
+                                "title": "员工直播数据汇总",
+                                "icon": "#",
+                                "corpId": null
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Outbound",
                     "path": "outbound",
                     "hidden": false,
                     "redirect": "noRedirect",
-                    "component": "dataStatistics/outbound/employeeCall/index",
+                    "component": "Layout",
                     "alwaysShow": true,
                     "meta": {
                         "title": "外呼数据",
@@ -1148,113 +1137,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "Live",
-                    "path": "live",
-                    "hidden": false,
-                    "redirect": "noRedirect",
-                    "component": "Layout",
-                    "alwaysShow": true,
-                    "meta": {
-                        "title": "直播数据",
-                        "icon": "#",
-                        "corpId": null
-                    },
-                    "children": [
-                        {
-                            "name": "LiveStatistics/index",
-                            "path": "liveStatistics/index",
-                            "hidden": false,
-                            "component": "dataStatistics/live/liveStatistics/index",
-                            "meta": {
-                                "title": "用户直播统计",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "LiveReport/index",
-                            "path": "liveReport/index",
-                            "hidden": false,
-                            "component": "dataStatistics/live/liveReport/index",
-                            "meta": {
-                                "title": "直播数据报表",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "SpeechDetails/index",
-                            "path": "speechDetails/index",
-                            "hidden": false,
-                            "component": "dataStatistics/live/speechDetails/index",
-                            "meta": {
-                                "title": "用户发言明细",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "LiveView/index",
-                            "path": "LiveView/index",
-                            "hidden": false,
-                            "component": "dataStatistics/live/liveView/index",
-                            "meta": {
-                                "title": "观看数据汇总",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        },
-                        {
-                            "name": "LiveView/staff",
-                            "path": "LiveView/staff",
-                            "hidden": false,
-                            "component": "dataStatistics/live/liveView/staff",
-                            "meta": {
-                                "title": "员工直播数据汇总",
-                                "icon": "#",
-                                "corpId": null
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "AdvertPush",
-            "path": "/advertPush",
-            "hidden": true,
-            "redirect": "noRedirect",
-            "component": "Layout",
-            "alwaysShow": true,
-            "meta": {
-                "title": "广告投放",
-                "icon": "#",
-                "corpId": null
-            },
-            "children": [
-                {
-                    "name": "AdvertPush/infoFlow",
-                    "path": "advertPush/infoFlow",
-                    "hidden": false,
-                    "component": "advertPush/infoFlow",
-                    "meta": {
-                        "title": "信息流",
-                        "icon": "#",
-                        "corpId": null
-                    }
-                },
-                {
-                    "name": "AdvertPush/SEM",
-                    "path": "advertPush/SEM",
-                    "hidden": false,
-                    "component": "advertPush/SEM",
-                    "meta": {
-                        "title": "SEM",
-                        "icon": "#",
-                        "corpId": null
-                    }
                 }
             ]
         }

@@ -55,7 +55,6 @@ const getUnReadNum = async () => {
 }
 
 const logout = () => {
-  removeToken();
   ElMessageBox.confirm('确定注销并退出系统吗？', '提示', {
     confirmButtonText: '确定',
     cancelButtonText: '取消',

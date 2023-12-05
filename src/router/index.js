@@ -78,6 +78,7 @@ export const loadMenus = (to) => {
     .then((res) => {
       const data = res.data;
       const asyncRouter = filterAsyncRouter(data);
+      console.log(asyncRouter, 'asyncRouter');
       // 处理输入/路由的情况
       if (asyncRouter && asyncRouter.length) {
         asyncRouter.push({

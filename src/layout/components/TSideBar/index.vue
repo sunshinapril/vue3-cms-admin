@@ -7,7 +7,7 @@
         :collapse-transition="false"
         mode="vertical"
       >
-        <sidebar-item
+        <SideBarItem
           v-for="(route, index) in sidebarRouters"
           :key="route.path + index"
           :item="route"
@@ -36,6 +36,7 @@ const activeMenu = computed(() => {
 });
 
 const sidebarRouters = computed(() => usePermission().sidebarRouters || []);
+console.log(sidebarRouters, 'sidebarRouters')
 
 </script>
 <style lang="less" scoped>

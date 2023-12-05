@@ -1,11 +1,12 @@
 import { constantRouterMap } from "@/router/index";
-import { defineComponent } from "vue";
+import { defineComponent, h } from "vue";
 const Layout = () => import("@/layout/index.vue");
 import { defineStore } from "pinia";
+import { RouterView } from "vue-router";
 
 const Outlet = defineComponent({
-  render() {
-    return "<router-view />";
+  setup() {
+    return () => h(RouterView);
   },
 });
 
@@ -30,37 +31,50 @@ const usePermission = defineStore({
     }
   },
 });
+
 const modulesRoutes = import.meta.glob("/src/views/**/*.{vue,jsx}");
+const modulesRoutesKeys = Object.keys(modulesRoutes);
 
-export const filterAsyncRouter = (routers) => {
-  // 遍历后台传来的路由字符串，转换为组件对象
-  const modulesRoutesKeys = Object.keys(modulesRoutes);
+// // 遍历后台传来的路由字符串，转换为组件对象
+let level = 0
+export const filterAsyncRouter = (asyncRouterMap, parentPath) => {
+  level++
+  let res = asyncRouterMap.filter((route) => {
+    route.meta = route.meta || {}
+    route.meta.hidden = route.hidden
 
-  return routers.filter((router) => {
-    router.meta = {
-      ...router?.meta,
-      hidden: router.hidden,
-    };
-    if (router.component) {
-      if (router.component === "Layout") {
-        // Layout组件特殊处理
-        router.component = Layout;
-      } else if (router.component === "Outlet") {
-        router.component = Outlet;
+    if (parentPath) {
+      let path = route.path
+      route.path = /^(\/|http)/.test(path) ? path : parentPath + '/' + path
+    }
+
+    if (route.component) {
+      // Layout组件特殊处理
+      if (route.redirect === 'noRedirect' && route.children.length) {
+        let firstChildPath = route.children[0].path
+        route.redirect = firstChildPath.startsWith('/') ? firstChildPath : route.path + '/' + firstChildPath
+      }
+      if (route.component === 'Layout') {
+        if (level != 1) {
+          route.component = Outlet
+        } else {
+          route.component = Layout
+        }
       } else {
-        const index = router?.component
-          ? modulesRoutesKeys.findIndex((ev) => ev.includes(router.component))
-          : modulesRoutesKeys.findIndex((ev) => ev.includes(router.path));
-        router.component = modulesRoutes[modulesRoutesKeys[index]];
+        const index = route?.component
+          ? modulesRoutesKeys.findIndex((ev) => ev.includes(route.component))
+          : modulesRoutesKeys.findIndex((ev) => ev.includes(route.path));
+        route.component = modulesRoutes[modulesRoutesKeys[index]];
       }
     }
-    if (router.children && router.children.length) {
-      // 给导航第一项添加重定向
-      router.redirect = `${router.path}/${router.children[0].path}`;
-      router.children = filterAsyncRouter(router.children);
+    let children = route.children
+    if (children && children.length) {
+      route.children = filterAsyncRouter(route.children, route.path)
     }
-    return true;
-  });
-};
+    return true
+  })
+  level--
+  return res
+}
 
 export default usePermission;

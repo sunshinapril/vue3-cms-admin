@@ -21,7 +21,7 @@
         <svg-icon v-if="item.meta && item.meta.icon" :name="item.meta.icon" />
         <span solt="title" style="color: #111316; font-size: 14px;font-weight: 600;" v-if="item.meta">{{ item.meta.title }}</span>
       </template>
-      <sidebar-item
+      <SideBarItem
         v-for="child in item.children"
         :key="child.path"
         :is-nest="true"
@@ -33,8 +33,9 @@
   </div>
 </template>
 <script setup>
-  import path from 'path'
+  import { ref } from 'vue';
   import { isExternal } from '@/utils/validate';
+  import AppLink from './AppLink.vue';
   const props = defineProps({
     item: {
         type: Object,
@@ -89,11 +90,12 @@
     if (/^\//.test(routePath)) {
       return routePath
     }
+    const path = props.basePath + ((!routePath || routePath.indexOf('/') === 0) ? routePath : '/' + routePath)
     if (routeQuery) {
-      let query = JSON.parse(routeQuery)
-      return { path: path.resolve(props.basePath, routePath), query: query }
+      let query = JSON.parse(routeQuery);
+      return { path: path, query: query }
     }
-    return path.resolve(props.basePath, routePath)
+    return path;
   }
 
 </script>
