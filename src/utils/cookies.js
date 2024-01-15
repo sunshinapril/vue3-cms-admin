@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-export const TOKEN_KEY = "westmoney";
+export const TOKEN_KEY = "Admin-Token";
 export const setToken = (token, cookieExpires) => {
   Cookies.set(TOKEN_KEY, token, {
     expires: cookieExpires || 1,

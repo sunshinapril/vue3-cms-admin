@@ -59,8 +59,9 @@ const logout = () => {
     confirmButtonText: '确定',
     cancelButtonText: '取消',
     type: 'warning'
-  }).then(() => {
-    useUser().logout();
+  }).then(async () => {
+    await useUser().logout();
+    location.href = '/login';
   })
 };
 </script>

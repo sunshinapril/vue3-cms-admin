@@ -6,6 +6,7 @@
         :unique-opened="true"
         :collapse-transition="false"
         mode="vertical"
+        class="c-menu"
       >
         <SideBarItem
           v-for="(route, index) in sidebarRouters"
@@ -30,7 +31,8 @@ const activeMenu = computed(() => {
   if (meta.activeMenu) {
     return meta.activeMenu
   } else if (route.meta.hidden) {
-    return route.matched.slice(-1)[0].parent.path
+    const matched = route.matched.slice(-1)[0];
+    return matched.parent && matched.parent.path || matched.path;
   }
   return path;
 });
@@ -40,6 +42,33 @@ console.log(sidebarRouters, 'sidebarRouters')
 
 </script>
 <style lang="less" scoped>
-
+.c-menu {
+  border-right: none;
+  :deep(.el-sub-menu__title) {
+    &:hover{
+      background-color: rgba(58,119,254,0.1);
+    }
+  }
+  :deep(.el-menu-item) {
+    position: relative;
+    &::before {
+      content: '';
+      width: 2px;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    &.is-active, &:hover {
+      color: #3A77FE;
+      background-color: rgba(58,119,254,0.1);
+      &::before {
+        background-color: #3A77FE;
+      }
+    }
+  }
+}
 </style>
 

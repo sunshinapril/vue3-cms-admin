@@ -3,7 +3,8 @@ import { setPageTitle } from "@/utils";
 import { getToken } from "@/utils/cookies";
 import useUser from "@/stores/modules/user";
 import usePermission, { filterAsyncRouter } from "@/stores/modules/permission";
-import { getUserInfo, buildMenus } from "@/apis/user";
+import { buildMenus } from "@/apis/menu";
+import { getInfo } from "@/apis/login";
 
 export const constantRouterMap = [
   {
@@ -41,8 +42,8 @@ router.beforeEach(async (to, from, next) => {
   if (getToken()) {
     if (!useUser().getUserInfo) {
       try {
-        const { data } = await getUserInfo();
-        useUser().setUserInfo(data);
+        const res = await getInfo();
+        useUser().setUserInfo(res);
         const p = await loadMenus(to);
         addPathMatch();
         next(p);
